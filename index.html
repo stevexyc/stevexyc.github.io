@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1>Posts</h1>
+
+  <div class="posts">
+    {% for post in site.posts %}
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <div class="post">
+	  {% if post.image %}
+	  <img class="post-thumb" src="{{ site.baseurl }}/img/{{ post.image }}"/>
+	  {% endif %}
+	  <div class="post-info">
+            <span class="post-link">{{ post.title }}</span>
+            <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+	    <span class="post-excerpt">{{ post.excerpt }}</span>
+	  </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

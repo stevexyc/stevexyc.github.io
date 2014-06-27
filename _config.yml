@@ -1,0 +1,10 @@
+# Site settings
+title: Steve X Chen
+email: hello@stevexchen.com
+description: "Welcome to Steve X. Chen's site"
+baseurl: ""
+url: "http://stevexchen.com"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
