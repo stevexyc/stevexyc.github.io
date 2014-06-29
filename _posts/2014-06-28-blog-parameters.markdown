@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Using Jekyll for blogging"
-date:   2014-06-27 11:37:26
-categories: jekyll update
-image: mountain.jpg
-excerpt: a short one-liner to provide a summary for the post
+title:  "Blog Parameters"
+date:   2014-06-28 11:37:26
+categories: jekyll 
+image: workdesk.jpg
+excerpt: A reference for parameters to use when writing posts
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
