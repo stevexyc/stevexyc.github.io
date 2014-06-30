@@ -5,8 +5,17 @@
     <div class="">
       <ul>
         <li>{{ site.title }} is a web developer, designer, working to make the web a prettier place</li>
-        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-	<li>
+        <li>
+          <a href="mailto:{{ site.email }}">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+              </svg>
+            </span>
+            {{ site.email }}
+          </a>
+        </li>
+	      <li>
           <a href="https://github.com/stevexyc">
             <span class="icon github">
               <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

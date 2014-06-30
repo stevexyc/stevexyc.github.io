@@ -11,7 +11,7 @@ layout: default
       </h2>
       <span class="home-categories">
       {% for cat in site.categories %}
-        <a href="#">  •  {{ cat | first}}</a>
+        <a href="/categories/{{cat | first}}">  •  {{ cat | first}}</a>
       {% endfor %}
       </span>
     </div>
