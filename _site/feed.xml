@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Steve X Chen</title>
-    <description>Welcome to Steve X. Chen's site</description>
+    <description>Welcome to Steve X. Chen&#39;s site</description>
     <link>http://stevexchen.com/</link>
     <atom:link href="http://stevexchen.com/feed.xml" rel="self" type="application/rss+xml" />
     
