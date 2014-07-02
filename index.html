@@ -10,9 +10,9 @@ layout: default
         Thoughts and musings on pretty web things<br/>
       </h2>
       <span class="home-categories">
-      {% for cat in site.categories %}
+      {% comment %}
         <a href="/categories/{{cat | first}}">  •  {{ cat | first}}</a>
-      {% endfor %}
+      {% endcomment %}
       </span>
     </div>
 
