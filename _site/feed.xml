@@ -7,6 +7,151 @@
     <atom:link href="http://stevexchen.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>CSS FlexBox Properties</title>
+        <description>&lt;h1 id=&quot;css-flex-box&quot;&gt;CSS FLEX BOX&lt;/h1&gt;
+&lt;p&gt;is a new method to layout, align and distribute space among items in a container, even when their size is unknown and/or dynamic. It arose out of the many screen sizes available today. &lt;/p&gt;
+
+&lt;h2 id=&quot;container-parent-properties&quot;&gt;Container (parent) properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;display&quot;&gt;display&lt;/h3&gt;
+&lt;p&gt;initiate the flex layout&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	display: flex; /* inline-flex */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;flex-direction&quot;&gt;flex-direction&lt;/h3&gt;
+&lt;p&gt;the direction of the flex&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	flex-direction: 
+    row | row-reverse | column | column-reverse;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;row: left to right
+row-reverse: right to left
+column: top to bottom 
+column-reverse: bottom to top&lt;/p&gt;
+
+&lt;h3 id=&quot;flex-wrap&quot;&gt;flex-wrap&lt;/h3&gt;
+&lt;p&gt;items will all try to fit onto one line, unless you define it by allowing items to wrap&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	flex-wrap: 
+    wrap | nowrap | wrap-reverse
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;flex-flow&quot;&gt;flex-flow&lt;/h3&gt;
+&lt;p&gt;a shorthand for flex-direction and flex-wrap&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	flex-flow: &amp;lt;'flex-direction'&amp;gt; || &amp;lt;'flex-wrap'&amp;gt;
+    /* default: row nowrap */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;justify-content&quot;&gt;justify-content&lt;/h3&gt;
+&lt;p&gt;defines alignment along the main axis (defined by flex-direction)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	justify-content: 
+    flex-start (default) | flex-end | center 
+    | space-between | space-around
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;** flex-start **: items are aligned to start line&lt;/li&gt;
+  &lt;li&gt;** flex-end **: items are aligned to end line&lt;/li&gt;
+  &lt;li&gt;** center **: items are centered along the line &lt;/li&gt;
+  &lt;li&gt;** space-between **: items evenly distributed in the line, first item at start line, last item on the end line&lt;/li&gt;
+  &lt;li&gt;** space-around **: items are evenly distributed in the line with equal space around them&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;align-items&quot;&gt;align-items&lt;/h3&gt;
+&lt;p&gt;defines default behaviour for how flex items are laid out along the cross-axis on the current line. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	align-items: 
+    flex-start | flex-end | center | baseline 
+    | stretch (default)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;align-content&quot;&gt;align-content&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;.container {
+	align-content: 
+    flex-start | flex-end | center | space-between | space-around
+    | stretch (default)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;item-child-properties&quot;&gt;Item (child) properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;order&quot;&gt;order&lt;/h3&gt;
+&lt;p&gt;control the order of items&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.item {
+	order: &amp;lt;integer&amp;gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;flex-grow&quot;&gt;flex-grow&lt;/h3&gt;
+&lt;p&gt;allow item to grow in size if necessary&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.item {
+	flex-grow: &amp;lt;number&amp;gt; /* default 0 */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;if all child elements have flex-grow = 1, then they all have equal size, but if one were to have a flex-grow =2, then it will be twice as large as the others. &lt;/p&gt;
+
+&lt;h3 id=&quot;flex-shrink&quot;&gt;flex-shrink&lt;/h3&gt;
+&lt;p&gt;allow item to shrink if necessary&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.item {
+	flex-shrink: &amp;lt;number&amp;gt; /* default 1 */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;flex-basis&quot;&gt;flex-basis&lt;/h3&gt;
+&lt;p&gt;defines the default size of element before remaining space is distributed &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.item {
+	flex-bases &amp;lt;length&amp;gt; | auto /* default auto */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;flex&quot;&gt;flex&lt;/h3&gt;
+&lt;p&gt;shorthand for flex-grow, flex-shrink, flex-basis. flex-shrink and flex-basis are optional. Default is 0 1 auto;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.item {
+	flex none | [&amp;lt;'flex-grow'&amp;gt;] &amp;lt;'flex-shrink'&amp;gt;? || &amp;lt;'flex-basis'&amp;gt; ]
+    /* default: 0 1 auto */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;align-self&quot;&gt;align-self&lt;/h3&gt;
+&lt;p&gt;allows the default alignment (assigned by align-items) to be overridden for individual items. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.item {
+	align-self: auto | flex-start | flex-end | center | baseline | stretch
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Thu, 03 Jul 2014 07:37:26 -0400</pubDate>
+        <link>http://stevexchen.com/css3/2014/07/03/css-flexbox-properties/</link>
+        <guid isPermaLink="true">http://stevexchen.com/css3/2014/07/03/css-flexbox-properties/</guid>
+      </item>
+    
+      <item>
         <title>Blog Parameters</title>
         <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
 To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
