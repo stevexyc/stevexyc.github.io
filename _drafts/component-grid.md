@@ -83,7 +83,4 @@ Also, I must get used to css-flex. I know that the grid system is not something 
 
 
 
-
-
-
 -
