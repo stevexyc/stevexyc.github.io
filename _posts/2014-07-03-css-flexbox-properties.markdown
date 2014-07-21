@@ -16,9 +16,11 @@ is a new method to layout, align and distribute space among items in a container
 ### display
 initiate the flex layout
 
-	.container {
-		display: flex; /* inline-flex */
-	}
+  {% highlight css linenos %}
+  .container {
+    display: flex; /* inline-flex */
+  }
+  {% endhighlight %}
 
 ### flex-direction
 the direction of the flex
