@@ -3,7 +3,7 @@ layout: post
 title:  "CSS FlexBox Properties"
 date:   2014-07-03 11:37:26
 categories: css3
-image: css3.jpg
+image: code-css.jpg
 excerpt: A quick reference of css-flex properties
 ---
 
@@ -16,11 +16,13 @@ is a new method to layout, align and distribute space among items in a container
 ### display
 initiate the flex layout
 
+<pre><code>
   {% highlight css linenos %}
   .container {
     display: flex; /* inline-flex */
   }
   {% endhighlight %}
+</code></pre>
 
 ### flex-direction
 the direction of the flex

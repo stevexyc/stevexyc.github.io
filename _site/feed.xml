@@ -16,9 +16,13 @@
 &lt;h3 id=&quot;display&quot;&gt;display&lt;/h3&gt;
 &lt;p&gt;initiate the flex layout&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;
+  
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* inline-flex */&lt;/span&gt;
 &lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;flex-direction&quot;&gt;flex-direction&lt;/h3&gt;
 &lt;p&gt;the direction of the flex&lt;/p&gt;
