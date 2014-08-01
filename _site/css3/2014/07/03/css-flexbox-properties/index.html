@@ -10,9 +10,11 @@
     <link rel="canonical" href="http://stevexchen.com/css3/2014/07/03/css-flexbox-properties/">
 
     <!-- Custom CSS -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/main.css">
-
+    <link rel="stylesheet" href="/css/zenburn.css">
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 
@@ -55,142 +57,130 @@
     <h1 id="css-flex-box">CSS FLEX BOX</h1>
 <p>is a new method to layout, align and distribute space among items in a container, even when their size is unknown and/or dynamic. It arose out of the many screen sizes available today. </p>
 
+<h2 id="overview">Overview</h2>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="n">flex</span><span class="o">-</span><span class="k">direction</span><span class="o">:</span> <span class="n">row</span> <span class="o">|</span> <span class="n">column</span><span class="p">;</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">wrap</span><span class="o">:</span> <span class="n">wrap</span> <span class="o">|</span> <span class="k">nowrap</span> <span class="o">|</span> <span class="n">wrap</span><span class="o">-</span><span class="n">reverse</span><span class="p">;</span>
+  <span class="k">justify</span><span class="o">-</span><span class="k">content</span><span class="o">:</span> <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> <span class="o">|</span> <span class="n">space</span><span class="o">-</span><span class="n">between</span> <span class="o">|</span> <span class="n">space</span><span class="o">-</span><span class="n">around</span><span class="p">;</span> 
+  <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="o">:</span> <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> <span class="o">|</span> <span class="k">baseline</span> <span class="o">|</span> <span class="n">stretch</span><span class="p">;</span> 
+<span class="p">}</span>
+
+<span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">order</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">integer</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">grow</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">integer</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">shrink</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">integer</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">basis</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">length</span><span class="o">&gt;</span> <span class="o">|</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="n">align</span><span class="o">-</span><span class="n">self</span><span class="o">:</span> <span class="k">auto</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> <span class="o">|</span> <span class="k">baseline</span> <span class="o">|</span> <span class="n">stretch</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
 <h2 id="container-parent-properties">Container (parent) properties</h2>
 
-<h3 id="display">display</h3>
-<p>initiate the flex layout</p>
+<p><strong>display</strong>: initiate the flex layout</p>
 
-<pre><code>
-  
-<div class="highlight"><pre><code class="css"><span class="lineno">1</span> <span class="nc">.container</span> <span class="p">{</span>
-<span class="lineno">2</span>     <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span> <span class="c">/* inline-flex */</span>
-<span class="lineno">3</span>   <span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span> <span class="c">/* inline-flex */</span>
+<span class="p">}</span></code></pre></div>
 
-</code></pre>
+<p><strong>flex-direction</strong>: the direction of the flex</p>
 
-<h3 id="flex-direction">flex-direction</h3>
-<p>the direction of the flex</p>
-
-<pre><code>.container {
-	flex-direction: 
-    row | row-reverse | column | column-reverse;
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="n">flex</span><span class="o">-</span><span class="k">direction</span><span class="o">:</span> 
+      <span class="n">row</span> <span class="o">|</span> <span class="n">row</span><span class="o">-</span><span class="n">reverse</span> <span class="o">|</span> <span class="n">column</span> <span class="o">|</span> <span class="n">column</span><span class="o">-</span><span class="n">reverse</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
 
 <p>row: left to right
 row-reverse: right to left
 column: top to bottom 
 column-reverse: bottom to top</p>
 
-<h3 id="flex-wrap">flex-wrap</h3>
-<p>items will all try to fit onto one line, unless you define it by allowing items to wrap</p>
+<p><strong>flex-wrap</strong>: items will all try to fit onto one line, unless you define it by allowing items to wrap</p>
 
-<pre><code>.container {
-	flex-wrap: 
-    wrap | nowrap | wrap-reverse
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">wrap</span><span class="o">:</span> 
+    <span class="n">wrap</span> <span class="o">|</span> <span class="k">nowrap</span> <span class="o">|</span> <span class="n">wrap</span><span class="o">-</span><span class="n">reverse</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="flex-flow">flex-flow</h3>
-<p>a shorthand for flex-direction and flex-wrap</p>
+<p><strong>flex-flow</strong>: a shorthand for flex-direction and flex-wrap</p>
 
-<pre><code>.container {
-	flex-flow: &lt;'flex-direction'&gt; || &lt;'flex-wrap'&gt;
-    /* default: row nowrap */
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">flow</span><span class="o">:</span> <span class="o">&lt;</span><span class="s1">&#39;flex-direction&#39;</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="s1">&#39;flex-wrap&#39;</span><span class="o">&gt;</span>
+    <span class="c">/* default: row nowrap */</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="justify-content">justify-content</h3>
-<p>defines alignment along the main axis (defined by flex-direction)</p>
+<p><strong>justify-content</strong>: defines alignment along the main axis (defined by flex-direction)</p>
 
-<pre><code>.container {
-	justify-content: 
-    flex-start (default) | flex-end | center 
-    | space-between | space-around
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">justify</span><span class="o">-</span><span class="k">content</span><span class="o">:</span> 
+    <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="p">(</span><span class="k">default</span><span class="p">)</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> 
+    <span class="o">|</span> <span class="n">space</span><span class="o">-</span><span class="n">between</span> <span class="o">|</span> <span class="n">space</span><span class="o">-</span><span class="n">around</span>
+<span class="p">}</span></code></pre></div>
 
 <ul>
-  <li>** flex-start **: items are aligned to start line</li>
-  <li>** flex-end **: items are aligned to end line</li>
-  <li>** center **: items are centered along the line </li>
-  <li>** space-between **: items evenly distributed in the line, first item at start line, last item on the end line</li>
-  <li>** space-around **: items are evenly distributed in the line with equal space around them</li>
+  <li><em>flex-start</em>: items are aligned to start line</li>
+  <li><em>flex-end</em>: items are aligned to end line</li>
+  <li><em>center</em>: items are centered along the line </li>
+  <li><em>space-between</em>: items evenly distributed in the line, first item at start line, last item on the end line</li>
+  <li><em>space-around</em>: items are evenly distributed in the line with equal space around them</li>
 </ul>
 
-<h3 id="align-items">align-items</h3>
-<p>defines default behaviour for how flex items are laid out along the cross-axis on the current line. </p>
+<p><strong>align-items</strong>: defines default behaviour for how flex items are laid out along the cross-axis on the current line. </p>
 
-<pre><code>.container {
-	align-items: 
-    flex-start | flex-end | center | baseline 
-    | stretch (default)
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="o">:</span> 
+    <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> <span class="o">|</span> <span class="k">baseline</span> 
+    <span class="o">|</span> <span class="n">stretch</span> <span class="p">(</span><span class="k">default</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="align-content">align-content</h3>
+<p><strong>align-content</strong> </p>
 
-<pre><code>.container {
-	align-content: 
-    flex-start | flex-end | center | space-between | space-around
-    | stretch (default)
-}
-</code></pre>
-
-<hr />
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="n">align</span><span class="o">-</span><span class="k">content</span><span class="o">:</span> 
+    <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> <span class="o">|</span> <span class="n">space</span><span class="o">-</span><span class="n">between</span> <span class="o">|</span> <span class="n">space</span><span class="o">-</span><span class="n">around</span>
+    <span class="o">|</span> <span class="n">stretch</span> <span class="p">(</span><span class="k">default</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
 
 <h2 id="item-child-properties">Item (child) properties</h2>
 
-<h3 id="order">order</h3>
-<p>control the order of items</p>
+<p><strong>order</strong>: control the order of items</p>
 
-<pre><code>.item {
-	order: &lt;integer&gt;
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">order</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">integer</span><span class="o">&gt;</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="flex-grow">flex-grow</h3>
-<p>allow item to grow in size if necessary</p>
+<p><strong>flex-grow</strong>: allow item to grow in size if necessary</p>
 
-<pre><code>.item {
-	flex-grow: &lt;number&gt; /* default 0 */
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">grow</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="c">/* default 0 */</span>
+<span class="p">}</span></code></pre></div>
 
 <p>if all child elements have flex-grow = 1, then they all have equal size, but if one were to have a flex-grow =2, then it will be twice as large as the others. </p>
 
-<h3 id="flex-shrink">flex-shrink</h3>
-<p>allow item to shrink if necessary</p>
+<p><strong>flex-shrink</strong>: allow item to shrink if necessary</p>
 
-<pre><code>.item {
-	flex-shrink: &lt;number&gt; /* default 1 */
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">shrink</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="c">/* default 1 */</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="flex-basis">flex-basis</h3>
-<p>defines the default size of element before remaining space is distributed </p>
+<p><strong>flex-basis</strong>: defines the default size of element before remaining space is distributed </p>
 
-<pre><code>.item {
-	flex-bases &lt;length&gt; | auto /* default auto */
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">flex</span><span class="o">-</span><span class="n">bases</span> <span class="o">&lt;</span><span class="n">length</span><span class="o">&gt;</span> <span class="o">|</span> <span class="k">auto</span> <span class="c">/* default auto */</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="flex">flex</h3>
-<p>shorthand for flex-grow, flex-shrink, flex-basis. flex-shrink and flex-basis are optional. Default is 0 1 auto;</p>
+<p><strong>flex</strong>: shorthand for flex-grow, flex-shrink, flex-basis. flex-shrink and flex-basis are optional. Default is 0 1 auto;</p>
 
-<pre><code>.item {
-	flex none | [&lt;'flex-grow'&gt;] &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]
-    /* default: 0 1 auto */
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">flex</span> <span class="k">none</span> <span class="o">|</span> <span class="p">[</span><span class="o">&lt;</span><span class="s1">&#39;flex-grow&#39;</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">&lt;</span><span class="s1">&#39;flex-shrink&#39;</span><span class="o">&gt;?</span> <span class="o">||</span> <span class="o">&lt;</span><span class="s1">&#39;flex-basis&#39;</span><span class="o">&gt;</span> <span class="p">]</span>
+    <span class="c">/* default: 0 1 auto */</span>
+<span class="p">}</span></code></pre></div>
 
-<h3 id="align-self">align-self</h3>
-<p>allows the default alignment (assigned by align-items) to be overridden for individual items. </p>
+<p><strong>align-self</strong>: allows the default alignment (assigned by align-items) to be overridden for individual items. </p>
 
-<pre><code>.item {
-	align-self: auto | flex-start | flex-end | center | baseline | stretch
-}
-</code></pre>
+<div class="highlight"><pre><code class="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="n">align</span><span class="o">-</span><span class="n">self</span><span class="o">:</span> <span class="k">auto</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">start</span> <span class="o">|</span> <span class="n">flex</span><span class="o">-</span><span class="n">end</span> <span class="o">|</span> <span class="k">center</span> <span class="o">|</span> <span class="k">baseline</span> <span class="o">|</span> <span class="n">stretch</span>
+<span class="p">}</span></code></pre></div>
 
 
   </article>
