@@ -24,7 +24,7 @@ is a new method to layout, align and distribute space among items in a container
   order: [integer];
   flex-grow: [integer];
   flex-shrink: [integer];
-  flex-basis: <length> | auto;
+  flex-basis: [length] | auto;
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
 </code></pre>
@@ -125,7 +125,7 @@ __flex-grow__: allow item to grow in size if necessary
 
 <pre><code class="css">
 .item {
-  flex-grow: <number> /* default 0 */
+  flex-grow: [number] /* default 0 */
 }
 </code></pre>
 
@@ -135,7 +135,7 @@ __flex-shrink__: allow item to shrink if necessary
 
 <pre><code class="css">
 .item {
-  flex-shrink: <number> /* default 1 */
+  flex-shrink: [number] /* default 1 */
 }
 </code></pre>
 
@@ -143,7 +143,7 @@ __flex-basis__: defines the default size of element before remaining space is di
 
 <pre><code class="css">
 .item {
-  flex-bases <length> | auto /* default auto */
+  flex-bases [length] | auto /* default auto */
 }
 </code></pre>
 
