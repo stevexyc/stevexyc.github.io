@@ -11,7 +11,7 @@ excerpt: A quick reference of css-flex properties
 is a new method to layout, align and distribute space among items in a container, even when their size is unknown and/or dynamic. It arose out of the many screen sizes available today. 
 
 ## Overview 
-{% highlight css %}
+<pre><code class="css">
 .container {
   display: flex;
   flex-direction: row | column;
@@ -28,27 +28,27 @@ is a new method to layout, align and distribute space among items in a container
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
 
-{% endhighlight %}
+</code></pre>
 
 
 ## Container (parent) properties
 
 __display__: initiate the flex layout
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   display: flex; /* inline-flex */
 }
-{% endhighlight %}
+</code></pre>
 
 __flex-direction__: the direction of the flex
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   flex-direction: 
       row | row-reverse | column | column-reverse;
 }
-{% endhighlight %}
+</code></pre>
 
 row: left to right
 row-reverse: right to left
@@ -57,31 +57,31 @@ column-reverse: bottom to top
 
 __flex-wrap__: items will all try to fit onto one line, unless you define it by allowing items to wrap
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   flex-wrap: 
     wrap | nowrap | wrap-reverse
 }
-{% endhighlight %}
+</code></pre>
 
 __flex-flow__: a shorthand for flex-direction and flex-wrap
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   flex-flow: <'flex-direction'> || <'flex-wrap'>
     /* default: row nowrap */
 }
-{% endhighlight %}
+</code></pre>
 
 __justify-content__: defines alignment along the main axis (defined by flex-direction)
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   justify-content: 
     flex-start (default) | flex-end | center 
     | space-between | space-around
 }
-{% endhighlight %}
+</code></pre>
 
 - _flex-start_: items are aligned to start line
 - _flex-end_: items are aligned to end line
@@ -92,70 +92,70 @@ __justify-content__: defines alignment along the main axis (defined by flex-dire
 
 __align-items__: defines default behaviour for how flex items are laid out along the cross-axis on the current line. 
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   align-items: 
     flex-start | flex-end | center | baseline 
     | stretch (default)
 }
-{% endhighlight %}
+</code></pre>
     
 __align-content__ 
 
-{% highlight css %}
+<pre><code class="css">
 .container {
   align-content: 
     flex-start | flex-end | center | space-between | space-around
     | stretch (default)
 }
-{% endhighlight %}
+</code></pre>
 
 
 ## Item (child) properties
 
 __order__: control the order of items
 
-{% highlight css %}
+<pre><code class="css">
 .item {
   order: <integer>
 }
-{% endhighlight %}
+</code></pre>
 
 
 __flex-grow__: allow item to grow in size if necessary
 
-{% highlight css %}
+<pre><code class="css">
 .item {
   flex-grow: <number> /* default 0 */
 }
-{% endhighlight %}
+</code></pre>
 
 if all child elements have flex-grow = 1, then they all have equal size, but if one were to have a flex-grow =2, then it will be twice as large as the others. 
 
 __flex-shrink__: allow item to shrink if necessary
 
-{% highlight css %}
+<pre><code class="css">
 .item {
   flex-shrink: <number> /* default 1 */
 }
-{% endhighlight %}
+</code></pre>
 
 __flex-basis__: defines the default size of element before remaining space is distributed 
 
-{% highlight css %}
+<pre><code class="css">
 .item {
   flex-bases <length> | auto /* default auto */
 }
-{% endhighlight %}
+</code></pre>
 
 __flex__: shorthand for flex-grow, flex-shrink, flex-basis. flex-shrink and flex-basis are optional. Default is 0 1 auto;
 
-{% highlight css %}
+<pre><code class="css">
 .item {
   flex none | [<'flex-grow'>] <'flex-shrink'>? || <'flex-basis'> ]
     /* default: 0 1 auto */
 }
-{% endhighlight %}
+</code></pre>
 
 __align-self__: allows the default alignment (assigned by align-items) to be overridden for individual items. 
 
@@ -163,7 +163,7 @@ __align-self__: allows the default alignment (assigned by align-items) to be ove
 .item {
   align-self: auto | flex-start | flex-end | center | baseline | stretch
 }
-{% endhighlight %}
+</code></pre>
 
 
 
