@@ -21,9 +21,9 @@ is a new method to layout, align and distribute space among items in a container
 }
 
 .item {
-  order: <integer>;
-  flex-grow: <integer>;
-  flex-shrink: <integer>;
+  order: [integer];
+  flex-grow: [integer];
+  flex-shrink: [integer];
   flex-basis: <length> | auto;
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
@@ -116,7 +116,7 @@ __order__: control the order of items
 
 <pre><code class="css">
 .item {
-  order: <integer>
+  order: [integer]
 }
 </code></pre>
 
