@@ -6,6 +6,8 @@ baseurl: ""
 url: "http://stevexchen.com"
 
 # Build settings
-markdown: kramdown
+markdown: Kramdown
 markdown_ext: markdown,mkdown,mkdn,mkd,md
 permalink: pretty
+
+highlighter: false

@@ -27,7 +27,6 @@ is a new method to layout, align and distribute space among items in a container
   flex-basis: <length> | auto;
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
-
 </code></pre>
 
 
@@ -159,7 +158,7 @@ __flex__: shorthand for flex-grow, flex-shrink, flex-basis. flex-shrink and flex
 
 __align-self__: allows the default alignment (assigned by align-items) to be overridden for individual items. 
 
-{% highlight css %}
+<pre><code class="css">
 .item {
   align-self: auto | flex-start | flex-end | center | baseline | stretch
 }
