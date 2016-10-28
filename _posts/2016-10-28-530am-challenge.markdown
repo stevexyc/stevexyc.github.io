@@ -4,7 +4,7 @@ title:  "The 5:30AM Challenge"
 date:   2016-10-28 05:30:00
 categories: 30-Day-Challenge
 image: sunrise.jpg
-excerpt: Starting the day at 5:30am for 30-days
+excerpt: Why the F*@! did I choose this?
 ---
 
 ## Day 1 - 10/28/16 Friday
