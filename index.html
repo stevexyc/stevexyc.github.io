@@ -3,20 +3,35 @@ layout: default
 ---
 
 <div class="home">
-  
-  <div class="home-feature">
-    <div class="wrap">
-      <h2 class="home-tagline">
-        Thoughts and musings on pretty web things<br/>
-      </h2>
-      <span class="home-categories">
-      {% comment %}
-        <a href="/categories/{{cat | first}}">  •  {{ cat | first}}</a>
-      {% endcomment %}
-      </span>
-    </div>
 
+
+  <div class="about">
+    <div class="wrap">
+      <div class="flex-row">
+        <div class="about-me">
+          <p style="font-size:1.3em;">
+            <b>Hello! </b>
+          </p>
+          <p>
+            <br/>
+            My name is Steve X Chen.
+            I believe that life is best lived when doing things that scare me or are almost impossible. <br/>
+            <br/>
+            My motivations are not for skills building, habit forming, or personal improvement (too boring). I am on a simple rampage to satisfy my curiousity.
+            <br/>
+            <br/>
+            In the past, I went on a 21 day fast. Currently, I am doing a 30-day challenge to wake up at 5:30am. Go ahead, read the crap I write.
+          </p>
+        </div>
+        <div class="profile-container">
+          <img class="profile-image" src="/img/steve-chen-gunks.jpg" alt="Steve X. Chen" />
+          <img class="second-image" src="/img/steve-x-chen-profile.jpg" alt="Steve X. Chen" />
+        </div>
+      </div>
+    </div>
   </div>
+
+  <hr>
 
   <div class="posts">
     {% for post in site.posts %}

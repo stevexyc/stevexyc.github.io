@@ -7,7 +7,7 @@
     <title>CSS FlexBox Properties</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Welcome to Steve X. Chen's site">
-    <link rel="canonical" href="http://stevexchen.com/css3/2014/07/03/css-flexbox-properties/">
+    <link rel="canonical" href="http://localhost:4000/css3/2014/07/03/css-flexbox-properties/">
 
     <!-- Custom CSS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -27,7 +27,9 @@
     <a class="site-title" href="/">Steve X Chen</a>
 
     <nav class="site-nav">
-	
+	    <ul>
+	      <!-- <li>Journal</li> -->
+	    </ul>
     </nav>
 
   </div>
@@ -55,7 +57,7 @@
 
   <article class="post-content">
     <h1 id="css-flex-box">CSS FLEX BOX</h1>
-<p>is a new method to layout, align and distribute space among items in a container, even when their size is unknown and/or dynamic. It arose out of the many screen sizes available today. </p>
+<p>is a new method to layout, align and distribute space among items in a container, even when their size is unknown and/or dynamic. It arose out of the many screen sizes available today.</p>
 
 <h2 id="overview">Overview</h2>
 <pre><code class="css">
@@ -131,12 +133,12 @@ column-reverse: bottom to top</p>
 <ul>
   <li><em>flex-start</em>: items are aligned to start line</li>
   <li><em>flex-end</em>: items are aligned to end line</li>
-  <li><em>center</em>: items are centered along the line </li>
+  <li><em>center</em>: items are centered along the line</li>
   <li><em>space-between</em>: items evenly distributed in the line, first item at start line, last item on the end line</li>
   <li><em>space-around</em>: items are evenly distributed in the line with equal space around them</li>
 </ul>
 
-<p><strong>align-items</strong>: defines default behaviour for how flex items are laid out along the cross-axis on the current line. </p>
+<p><strong>align-items</strong>: defines default behaviour for how flex items are laid out along the cross-axis on the current line.</p>
 
 <pre><code class="css">
 .container {
@@ -146,7 +148,7 @@ column-reverse: bottom to top</p>
 }
 </code></pre>
 
-<p><strong>align-content</strong> </p>
+<p><strong>align-content</strong></p>
 
 <pre><code class="css">
 .container {
@@ -174,7 +176,7 @@ column-reverse: bottom to top</p>
 }
 </code></pre>
 
-<p>if all child elements have flex-grow = 1, then they all have equal size, but if one were to have a flex-grow =2, then it will be twice as large as the others. </p>
+<p>if all child elements have flex-grow = 1, then they all have equal size, but if one were to have a flex-grow =2, then it will be twice as large as the others.</p>
 
 <p><strong>flex-shrink</strong>: allow item to shrink if necessary</p>
 
@@ -184,7 +186,7 @@ column-reverse: bottom to top</p>
 }
 </code></pre>
 
-<p><strong>flex-basis</strong>: defines the default size of element before remaining space is distributed </p>
+<p><strong>flex-basis</strong>: defines the default size of element before remaining space is distributed</p>
 
 <pre><code class="css">
 .item {
@@ -201,7 +203,7 @@ column-reverse: bottom to top</p>
 }
 </code></pre>
 
-<p><strong>align-self</strong>: allows the default alignment (assigned by align-items) to be overridden for individual items. </p>
+<p><strong>align-self</strong>: allows the default alignment (assigned by align-items) to be overridden for individual items.</p>
 
 <pre><code class="css">
 .item {
@@ -223,7 +225,7 @@ column-reverse: bottom to top</p>
 
     <div class="">
       <ul>
-        <li>Steve X Chen is a web developer, designer, working to make the web a prettier place</li>
+        <li>Steve X Chen is on a simple rampage to satisfy his curiousity </li>
         <li>
           <a href="mailto:hello@stevexchen.com">
            hello@stevexchen.com
